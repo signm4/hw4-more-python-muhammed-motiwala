@@ -22,16 +22,21 @@ def sphere_volume(rad):
     volume1 = (math.pow(rad, 3)) * (math.pi) * (4/3)
     return (volume1)
 
-def divide_with_error_handling():
-    input1 = input("enter 1st number: ")
-    input2 = input("input 2nd number: ")    
+def divide_with_error_handling(int1, int2):
+    # input1 = input("enter 1st number: ")
+    # input2 = input("input 2nd number: ")    
 
-    if input2 == 0:
-        print(" WARNING, division by 0")
+    # if int2 == 0:
+    #     print(" WARNING, division by 0")
 
-    else:
-        answer = input1/input2
-        return answer
+    # else:
+    #     answer = int1/int2
+    #     return answer
+
+    try:
+        return int1/int2
+    except:
+        print("WARNING can't divide by 0")
 
 def decode_csv_data_into_dictionary():
     input1 = input("Enter input here: ")
@@ -40,3 +45,6 @@ def decode_csv_data_into_dictionary():
 fizz_buzz_game()
 
 print(sphere_volume(3))
+
+print(divide_with_error_handling(6, 9))
+print(divide_with_error_handling(6, 0))
