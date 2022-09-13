@@ -17,8 +17,8 @@ def fizz_buzz_game():
     elapsed_time = end - start
     print (elapsed_time)
 
-def sphere_volume():
-    rad = input("Enter the Radius")
+def sphere_volume(rad):
+    # rad = input("Enter the Radius")
     volume1 = (math.pow(rad, 3)) * (math.pi) * (4/3)
     return (volume1)
 
@@ -38,3 +38,5 @@ def decode_csv_data_into_dictionary():
     
 
 fizz_buzz_game()
+
+print(sphere_volume(3))
