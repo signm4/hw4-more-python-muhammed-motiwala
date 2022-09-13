@@ -43,7 +43,7 @@ def decode_csv_data_into_dictionary(csv_file_name):
     input_file = open(csv_file_name)
 
     # read the first column of names and make a list
-    column_names_string = input_file.readline.strip()
+    column_names_string = input_file.readline().strip()
     list_of_column_names = column_names_string.split(",")
 
     # create dict with column name as keys("none" val for now)
