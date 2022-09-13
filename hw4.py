@@ -1,4 +1,5 @@
 import math
+import readline
 import time
 
 def fizz_buzz_game():
@@ -38,8 +39,31 @@ def divide_with_error_handling(int1, int2):
     except:
         print("WARNING can't divide by 0")
 
-def decode_csv_data_into_dictionary():
-    input1 = input("Enter input here: ")
+def decode_csv_data_into_dictionary(csv_file_name):
+    input_file = open(csv_file_name)
+
+    # read the first column of names and make a list
+    column_names_string = input_file.readline()
+    list_of_column_names = column_names_string.split(",")
+
+    # create dict with column name as keys("none" val for now)
+    decoded_csv_data_dictionary = dict.fromkeys(list_of_column_names)
+
+    # read in the rest of file and create table of the deata
+    csv_table_data = []
+    for line in input_file:
+        csv_table_data.append(line.strip().split(","))
+    
+    #iterate over table column by column and append data to the proper column key
+
+    for index, key in enumerate(decoded_csv_data_dictionary):
+        decoded_csv_data_dictionary[key] = []
+        for row in csv_table_data:
+            decoded_csv_data_dictionary[key].append(row[index])
+
+    return decoded_csv_data_dictionary
+
+print(decode_csv_data_into_dictionary('data.csv'))
     
 
 fizz_buzz_game()
