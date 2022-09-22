@@ -1,8 +1,8 @@
 import math
-import readline
 import time
 
-def fizz_buzz_game():
+''' This function replaces any number divisible by 3 with Fizz, 5 with Buzz, and both with FizzBuzz'''
+def fizz_buzz_game(): 
     start = time.time()
     for i in range(1, 101):
         if i % 3 == 0 and i % 5 == 0:
